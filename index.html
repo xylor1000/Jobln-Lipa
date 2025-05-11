@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobLnLipa | Find Jobs in Lipa Batangas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Jobln Lipa</h1>
+    <p>Job Board Lipa City</p>
+    <form class="search-bar">
+      <input type="text" placeholder="Job title, keywords...">
+      <button type="submit">Search</button>
+    </form>
+    <div class="filters">
+      <label for="job-type">Job Type:</label>
+      <select id="job-type">
+        <option>All</option>
+        <option>Full-time</option>
+        <option>Part-time</option>
+        <option>Contract</option>
+        <option>Internship</option>
+      </select>
+
+      <label for="industry">Industry:</label>
+      <select id="industry">
+        <option>All</option>
+        <option>Manufacturing</option>
+        <option>Retail</option>
+        <option>Hospitality</option>
+        <option>BPO / IT</option>
+        <option>Healthcare</option>
+        <option>Education</option>
+        <option>Agriculture</option>
+      </select>
+
+      <label for="salary">Salary Range:</label>
+      <input type="range" id="salary" name="salary" min="10000" max="50000" step="5000" oninput="document.getElementById('salary-value').textContent = '₱' + this.value">
+      <span id="salary-value">₱10000</span>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="job-list">
+      <div class="job-card" onclick="showJobDetails('Admin and Sales Assistant', 'Sonkkens Office Equipment Trading', 'Full-time', 'Retail', '₱12,000 - ₱15,000', 'This role involves assisting with daily office tasks, including sales support and customer interactions.')">
+        <h2>Admin and Sales Assistant</h2>
+        <p><strong>Company:</strong> Sonkkens Office Equipment Trading</p>
+        <p><strong>Location:</strong> Lipa City, Batangas</p>
+        <p><strong>Job Type:</strong> Full-time</p>
+      </div>
+
+      <div class="job-card" onclick="showJobDetails('Customer Service Representative', 'Lipa BPO Solutions', 'Full-time', 'BPO / IT', '₱18,000 - ₱22,000', 'You will be responsible for handling customer inquiries, providing support, and ensuring customer satisfaction.')">
+        <h2>Customer Service Representative</h2>
+        <p><strong>Company:</strong> Lipa BPO Solutions</p>
+        <p><strong>Location:</strong> Lipa City, Batangas</p>
+        <p><strong>Job Type:</strong> Full-time</p>
+      </div>
+
+      <div class="job-card" onclick="showJobDetails('Production Operator', 'EPSON Precision Philippines', 'Contract', 'Manufacturing', '₱13,000 + overtime', 'You will work in a production environment ensuring quality control and handling equipment operations.')">
+        <h2>Production Operator</h2>
+        <p><strong>Company:</strong> EPSON Precision Philippines</p>
+        <p><strong>Location:</strong> Lima Technology Center, Lipa</p>
+        <p><strong>Job Type:</strong> Contract</p>
+      </div>
+
+      <!-- Additional jobs -->
+      <div class="job-card" onclick="showJobDetails('Marketing Associate', 'Lipa Marketing Group', 'Full-time', 'Retail', '₱15,000 - ₱18,000', 'This position will support marketing campaigns and manage client relations.')">
+        <h2>Marketing Associate</h2>
+        <p><strong>Company:</strong> Lipa Marketing Group</p>
+        <p><strong>Location:</strong> Lipa City, Batangas</p>
+        <p><strong>Job Type:</strong> Full-time</p>
+      </div>
+
+      <div class="job-card" onclick="showJobDetails('HR Specialist', 'Lipa HR Solutions', 'Full-time', 'Human Resources', '₱18,000 - ₱22,000', 'Responsible for recruitment, employee relations, and handling HR-related concerns.')">
+        <h2>HR Specialist</h2>
+        <p><strong>Company:</strong> Lipa HR Solutions</p>
+        <p><strong>Location:</strong> Lipa City, Batangas</p>
+        <p><strong>Job Type:</strong> Full-time</p>
+      </div>
+
+      <div class="job-card" onclick="showJobDetails('IT Support Technician', 'Lipa IT Services', 'Full-time', 'BPO / IT', '₱20,000 - ₱25,000', 'Providing IT support, troubleshooting hardware and software issues for clients and staff.')">
+        <h2>IT Support Technician</h2>
+        <p><strong>Company:</strong> Lipa IT Services</p>
+        <p><strong>Location:</strong> Lipa City, Batangas</p>
+        <p><strong>Job Type:</strong> Full-time</p>
+      </div>
+    </div>
+
+    <div class="job-description">
+      <h2>Job Details</h2>
+      <div id="job-details">
+        <p>Select a job to view its details.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Lipa City Job Hub</p>
+  </footer>
+
+  <script>
+    function showJobDetails(title, company, type, industry, salary, description) {
+      const detailsContainer = document.getElementById('job-details');
+      detailsContainer.innerHTML = `
+        <h3>${title}</h3>
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Job Type:</strong> ${type}</p>
+        <p><strong>Industry:</strong> ${industry}</p>
+        <p><strong>Salary:</strong> ${salary}</p>
+        <p><strong>Description:</strong> ${description}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
